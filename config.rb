@@ -68,3 +68,9 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+activate :dotenv
+activate :s3_sync do |s3_sync|
+  s3_sync.region = 'ap-northeast-1'
+  s3_sync.bucket = 'www.koshikawa.jp'
+end
