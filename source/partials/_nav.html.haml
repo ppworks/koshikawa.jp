@@ -1,0 +1,5 @@
+#menu
+  %ul
+    - data.nav.pages.each do |page|
+      %li{id: page.name, class: "#{'current' if page_classes == page.name}" }
+        = page_classes == page.name ? page.label : (link_to page.label, "#{page.name}.html", title: page.title)
