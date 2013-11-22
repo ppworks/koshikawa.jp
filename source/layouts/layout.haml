@@ -1,6 +1,7 @@
 !!! 1.1
 %html{"xml:lang" => "ja", xmlns: "http://www.w3.org/1999/xhtml"}
   %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
     %title= current_page.data.title ||  '脊椎矯正の越川治療院'
     %meta{content: "INDEX,FOLLOW", name: "robots"}/
     %meta{content: "naoto koshikawa", name: "author"}/
@@ -8,11 +9,8 @@
     %meta{content: "整体,整骨,あん摩,あんまマッサージ,脊椎矯正,東洋医学,長生学園", name: "keywords"}/
     %link{href: "mailto:info@koshikawa.jp", rev: "made"}/
     %link{href: "./index.html", rel: "contents", title: "トップページ"}/
-    %link{href: "./c/standard.css", rel: "stylesheet", type: "text/css"}/
     = stylesheet_link_tag "normalize", "all"
     = javascript_include_tag  "all"
-    %link{href: "./koshikawa.ico", rel: "SHORTCUT ICON"}/
-    %script{src: "./j/analyzer.js", type: "text/javascript"}
   %body{class: page_classes}
     #description
       越川治療院では
@@ -24,4 +22,4 @@
       = partial 'partials/nav'
       = yield
       %div{style: "clear:both;"}  
-    #copyright Copyright©2005 - 2013 koshikawa.jp All rights reserved.
+    #copyright Copyright©2005 - #{Time.current.year} 越川治療院 All rights reserved.
