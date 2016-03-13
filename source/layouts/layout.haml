@@ -1,15 +1,17 @@
 !!! 1.1
 %html{"xml:lang" => "ja", xmlns: "http://www.w3.org/1999/xhtml"}
   %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "content-type"}
     %title= current_page.data.title ||  '脊椎矯正の越川治療院'
-    %meta{content: "INDEX,FOLLOW", name: "robots"}/
-    %meta{content: "naoto koshikawa", name: "author"}/
-    %meta{content: "大鳥居の越川治療院では脊椎矯正を行っています", name: "description"}/
-    %meta{content: "整体,整骨,あん摩,あんまマッサージ,脊椎,矯正,東洋,医学,長生学園,大鳥居,腰痛,頭痛", name: "keywords"}/
-    %link{href: "mailto:info@koshikawa.jp", rev: "made"}/
-    %link{href: "./index.html", rel: "contents", title: "トップページ"}/
+    %meta{content: "INDEX,FOLLOW", name: "robots"}
+    %meta{content: "naoto koshikawa", name: "author"}
+    %meta{:content => "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no", :name => "viewport"}
+    %meta{content: "大鳥居の越川治療院では脊椎矯正を行っています", name: "description"}
+    %meta{content: "整体,整骨,あん摩,あんまマッサージ,脊椎,矯正,東洋,医学,長生学園,大鳥居,腰痛,頭痛", name: "keywords"}
+    %link{href: "mailto:info@koshikawa.jp", rev: "made"}
+    %link{href: "./index.html", rel: "contents", title: "トップページ"}
     = stylesheet_link_tag "normalize", "all"
+    = javascript_include_tag  "//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
     = javascript_include_tag  "all"
     = partial 'partials/ga'
   %body{class: page_classes}
@@ -19,8 +21,9 @@
       を行っております。
     #main
       %h1
-        %img#imgTitle{alt: "越川治療院", src: "./images/title.gif"}/
+        = link_to "/" do
+          %img#imgTitle{alt: "越川治療院", src: "./images/title.gif"}
+        %span.showMobileNav
       = partial 'partials/nav'
       = yield
-      %div{style: "clear:both;"}  
     #copyright Copyright©2005 - #{Time.current.year} 越川治療院 All rights reserved.

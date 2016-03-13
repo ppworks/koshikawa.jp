@@ -1,5 +1,10 @@
 @charset "UTF-8"
 
+$break-point: 767px
+
+*
+  box-sizing: border-box
+
 body
   background-color: #eaf2f5
   color: #455774
@@ -14,16 +19,29 @@ body
   scrollbar-track-color: #cccccc
   scrollbar-darkshadow-color: #ebf0f2
   text-align: center
+  @media screen and (max-width: #{$break-point})
+    margin: 0
+img,
+iframe
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  display: block
 
 h1
   background-color: #739aab
   border: solid 1px #363839
   color: #ffffff
   font-size: 1.2em
-  margin: 20px 20px 5px 20px
+  margin: 0 0 5px
   /*margin:0 auto auto auto;
   text-align: left
-  width: 760px
+  @media screen and (max-width: #{$break-point})
+    margin: 0 -10px 20px
+    border: none
+    box-shadow: 0 1px 0 #5A8598
+    position: relative
+    z-index: 1
 
 h2
   color: #437f93
@@ -31,12 +49,15 @@ h2
   border-bottom: solid 2px #739aab
   font-size: 1.0em
   font-weight: bold
-  margin: 10px 10px 10px 10px
+  margin: 30px 0 20px
   padding-left: 7px
+  &:first-child
+    margin-top: 0
 
 h3
   font-size: 1.0em
   font-weight: bold
+  margin: 0 0 10px
 
 a
   &:link
@@ -54,12 +75,27 @@ a
     text-decoration: underline
 
 p
-  margin: 10px 20px 30px 20px
+  margin: 0 0 20px
   /*width:700px;
+  &:last-child
+    margin-bottom: 0
+
+ol,
+ul
+  margin: 0 0 20px
 
 dl
-  margin: 10px 20px 30px 40px
+  margin: 10px 20px 30px
   /*width:680px;
+  @media screen and (max-width: #{$break-point})
+    margin-left: 0
+    margin-right: 0
+dd
+  margin-bottom: 10px
+  @media screen and (max-width: #{$break-point})
+    margin-left: 10px
+  &:last-child
+    margin-bottom: 0
 
 em
   font-weight: bold
@@ -68,74 +104,155 @@ em
 #description
   margin: 10px auto auto auto
   text-align: left
-  width: 800px
+  max-width: 800px
+  @media screen and (max-width: #{$break-point})
+    display: none
 
 #imgTitle
   border-top: solid 0 #739aab
   border-right: solid 0 #739aab
   border-bottom: solid 0 #739aab
   border-left: solid 0 #739aab
+  margin: 0
+  position: relative
+  @media screen and (max-width: #{$break-point})
+    height: 44px
+    width: auto
+    padding: 6px 0
 
+.showMobileNav
+  display: none
+  @media screen and (max-width: #{$break-point})
+    display: block
+    height: 44px
+    width: 44px
+    position: absolute
+    right: 0
+    top: 1px
+    &:before
+      content: ""
+      display: block
+      height: 13px
+      width: 24px
+      border-top: white 3px solid
+      border-bottom: white 3px solid
+      position: absolute
+      right: 10px
+      top: 12px
+    &:after
+      content: ""
+      display: block
+      height: 3px
+      width: 24px
+      position: absolute
+      right: 10px
+      top: 20px
+      background-color: white
 #main
   background-color: #f8fdff
   border: solid 1px #363839
   margin: 10px auto auto auto
   text-align: center
-  width: 800px
+  max-width: 800px
+  padding: 20px
+  box-sizing: border-box
+  @media screen and (max-width: #{$break-point})
+    padding: 0 10px 10px
+    margin: 0
+    border: none
 
 #menu
   background-image: url('../images/top.gif')
   background-repeat: no-repeat
   background-position: right top
-  height: 58px
+  height: 88px
   padding: 50px 0 0 0
-  width: 752px
+  max-width: 760px
+  margin: 0 auto 20px
+  @media screen and (max-width: #{$break-point})
+    max-height: 0
+    height: auto
+    padding: 0
+    margin: -20px -10px 0
+    background: #2E4F5E
+    overflow: hidden
+    transition: max-height .4s
+    &.active
+      max-height: 500px
   ul
     line-height: 2.0em
     padding: 0
     list-style-type: none
+    @media screen and (max-width: #{$break-point})
+      margin-bottom: 0
   li
     color: #333333
-    display: inline
-    margin: 0 0 0 0
-    padding-top: 3px
-    padding-right: 5px
-    padding-bottom: 3px
-    padding-left: 5px
+    display: inline-block
+    line-height: 1.2
+    margin: 0
+    padding: 0 10px
+    @media screen and (max-width: #{$break-point})
+      display: block
+      color: white
+      padding: 0
+      border-right: none
+      border-bottom: solid 1px #496D7D
+      &.current
+        background-color: #406A7D
+        font-weight: bold
+      a,
+      &.current
+        display: block
+        text-align: left
+        padding: 5px 10px
+        color: white
+        line-height: 2.2
+      a
+        text-decoration: none
 
-#top, #about, #flow, #faq, #charge, #map, #mail
+#index, #about, #flow, #faq, #charge, #map, #mail
   border-right: solid 1px #363839
 
 #link!
 
 #top_image
   padding-top: 10px
-  flow: right
+  img
+    width: 100%
+    height: auto
+  @media screen and (max-width: #{$break-point})
+    padding-top: 0
+    margin-left: -10px
+    margin-right: -10px
+    & + h2
+      margin-top: 10px
 
 #contents
-  background-color: #F6F7F8
-  margin: 20px
   text-align: left
-  width: 760px
+  @media screen and (max-width: #{$break-point})
+    padding-top: 20px
 
 * html #contents
-  width: 750px
+  max-width: 750px
 
 #copyright
   clear: both
   margin: 5px auto auto auto
   text-align: right
-  width: 800px
+  max-width: 800px
+  @media screen and (max-width: #{$break-point})
+    text-align: center
+    font-size: 10px
 
 /* トップ
 
 #topContents
-  background-color: #F6F7F8
   /*	float:left;
-  height: 1300px
-  margin: 20px
   text-align: left
-  width: 760px
+  dd
+    margin: 0 0 20px 20px
+    @media screen and (max-width: #{$break-point})
+      margin-left: 10px
 
 #imgTop
   /*	border:solid 1px #999999;
@@ -146,7 +263,7 @@ em
 
 * html #topContents
   margin-left: 12px
-  width: 750px
+  max-width: 750px
 
 html > #imgTop
   float: rigth
@@ -159,31 +276,54 @@ html > #imgTop
   border: solid 1px #999999
   display: block
   float: left
-  margin: 10px
+  margin: 0
   padding: 5px
-
+  max-width: 172px
+  @media screen and (max-width: #{$break-point})
+    margin: 0 auto 20px
+    float: none
 #contentAbout
   float: right
-  margin: 10px
-  width: 540px
+  margin: 0 0 10px
+  max-width: 540px
+
 
 #koshikawaeiji
   clear: both
   font-weight: bold
   margin: 5px
   text-align: right
-  width: 720px
+  max-width: 720px
 
 /* 治療の流れ
 
 #flow_image
   overflow: hidden
+  padding: 0
+  list-style-position: inside
+  text-align: center
   li
     display: list-item
     list-style-type: decimal
     float: left
     width: 50%
     height: 370px
+    @media screen and (max-width: #{$break-point})
+      width: 100%
+      height: auto
+      float: none
+      margin-bottom: 30px
+      &:after
+        content: "↓"
+        font-size: 60px
+        font-weight: bold
+        display: block
+        text-align: center
+      &:last-child
+        margin-bottom: 0
+        &:after
+          content: none
+
   img
     background-color: #ffffff
     border: solid 1px #999999
@@ -203,51 +343,97 @@ html > #imgTop
     background-repeat: no-repeat
     background-position: left middle
     padding-left: 30px
+    margin-bottom: 10px
   dd
     /* A
     background-image: url('../images/a.gif')
     background-repeat: no-repeat
     background-position: left middle
-    margin-bottom: 40px
+    margin-bottom: 30px
     padding-left: 30px
+    @media screen and (max-width: #{$break-point})
+      margin-left: 10px
 
 /* 料金表
 
 #tableCharge
   border: solid 1px #363839
   border-collapse: collapse
-  margin: 10px 20px 30px 20px
+  margin: 10px 0 30px
   padding: 0
-  width: 700px
+  width: 100%
+  caption
+    margin-bottom: 5px
   th
     background-color: #dde8ec
     border-right: solid 1px #363839
     border-bottom: double 3px #363839
     text-align: center
+    padding: 5px
   td
     background-color: #edf1f3
     border-right: solid 1px #363839
     border-bottom: dotted 1px #363839
     text-align: center
+    padding: 5px
 
 /* 種別ヘッダ
 
 #thChargeKind
-  width: 300px
+  max-width: 300px
 
 /* 料金ヘッダ
 
 #thCharge
-  width: 400px
+  max-width: 400px
 
 /* 道順
 
-ol#route img
-  background-color: #ffffff
-  border: solid 1px #999999
+.map-image
   display: block
-  margin: 0 auto
-  padding: 5px
+  padding: 20px 0 20px 20px
+  background-color: white
+
+.map-iframe
+  @media screen and (max-width: #{$break-point})
+    display: none
+
+body
+  .map-link
+    display: none
+    @media screen and (max-width: #{$break-point})
+      display: block
+      border: solid 1px
+      color: #437f93
+      text-decoration: none
+      text-align: center
+      padding: 6px 0
+      font-size: 14px
+
+ol#route
+  @media screen and (max-width: #{$break-point})
+    padding-left: 0
+    list-style: none
+  img
+    background-color: #ffffff
+    border: solid 1px #999999
+    display: block
+    margin: 10px auto 0
+    padding: 5px
+  li
+    margin-bottom:  30px
+    @media screen and (max-width: #{$break-point})
+      position: relative
+      &:after
+        content: "↓"
+        font-size: 60px
+        font-weight: bold
+        display: block
+        text-align: center
+      &:last-child
+        &:after
+          content: none
+
 
 /* お問い合わせ
 
