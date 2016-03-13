@@ -12,3 +12,5 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 
 gem 'middleman-dotenv'
 gem 'middleman-s3_sync'
+gem 'middleman-s3_sync'
+gem 'middleman-autoprefixer'

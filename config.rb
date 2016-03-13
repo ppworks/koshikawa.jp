@@ -74,3 +74,7 @@ activate :s3_sync do |s3_sync|
   s3_sync.region = 'ap-northeast-1'
   s3_sync.bucket = 'www.koshikawa.jp'
 end
+
+activate :autoprefixer do |config|
+  config.browsers = ['last 2 versions', 'Explorer >= 8']
+end
