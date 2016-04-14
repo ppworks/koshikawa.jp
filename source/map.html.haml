@@ -1,3 +1,4 @@
+- map_url = "https://www.google.co.jp/maps/place/%E8%B6%8A%E5%B7%9D%E6%B2%BB%E7%99%82%E9%99%A2/@35.5536502,139.7364615,17z/data=!3m1!4b1!4m2!3m1!1s0x6018611b0c303d33:0xd683b5aec86e424d"
 #contents
   %h2 行き方
   %p
@@ -6,43 +7,46 @@
     %dt 住所
     %dd
       %address
-        %a{href: "http://www.mapion.co.jp/c/f?uc=1&grp=all&nl=35/33/01.450&el=139/44/30.906&scl=10000&bid=Mlink"} 東京都大田区西糀谷3-34-7
+        %a{href: map_url, target: "_blank"} 東京都大田区西糀谷3-34-7
     %dt 電話番号
     %dd
       %address 03-5705-1224
   %p
-    %img.image{src: "./images/map.png"}/
+    %img.map-image{src: "./images/map.png"}
   %p
-    %iframe{height: "400", src: "./googleMap.html", width: "600"}
+    %iframe.map-iframe{height: "400", src: "./googleMap.html", width: "600"}
+    = link_to map_url, class: "map-link", target: "_blank" do
+      GoogleMapで見る
+
   %h2 最寄り駅から越川治療院への道順
   %ol#route
     %li
       京浜急行 空港線 大鳥居駅西口からの道順をご案内します。
-      %img{alt: "駅からの道順1", height: "300", src: "images/map01_P5093663.jpg", width: "400"}/
+      %img.map-direction-image{alt: "駅からの道順1", src: "images/map01_P5093663.jpg"}
     %li
       改札を出て右手の環八道路に沿った方向へ向かいます。
-      %img{alt: "駅からの道順2", height: "300", src: "images/map02_P5093664.jpg", width: "400"}/
+      %img.map-direction-image{alt: "駅からの道順2", src: "images/map02_P5093664.jpg"}
     %li
       環八道路の脇の歩道に沿って歩きます。
-      %img{alt: "駅からの道順3", height: "300", src: "images/map03_P5093666.jpg", width: "400"}/
+      %img.map-direction-image{alt: "駅からの道順3", src: "images/map03_P5093666.jpg"}
     %li
       そのまま50mほど進むと
-      %img{alt: "駅からの道順4", height: "300", src: "images/map04_P5093667.jpg", width: "400"}/
+      %img.map-direction-image{alt: "駅からの道順4", src: "images/map04_P5093667.jpg"}
     %li
       TUTAYAさんとお花屋さんの脇に細い路地があります。
-      %img{alt: "駅からの道順5", height: "300", src: "images/map05_P5093668.jpg", width: "400"}/
+      %img.map-direction-image{alt: "駅からの道順5", src: "images/map05_P5093668.jpg"}
     %li
       路地を進みます。
-      %img{alt: "駅からの道順6", height: "300", src: "images/map06_P5093672.jpg", width: "400"}/
+      %img.map-direction-image{alt: "駅からの道順6", src: "images/map06_P5093672.jpg"}
     %li
       十字路を更に進みます。
-      %img{alt: "駅からの道順7", height: "300", src: "images/map07_P5093679.jpg", width: "400"}/
+      %img.map-direction-image{alt: "駅からの道順7", src: "images/map07_P5093679.jpg"}
     %li
       左手に看板が見えてきました。
-      %img{alt: "駅からの道順8", height: "300", src: "images/map08_P5093682.jpg", width: "400"}/
+      %img.map-direction-image{alt: "駅からの道順8", src: "images/map08_P5093682.jpg"}
     %li
       自転車を停めるスペースが見えてきました。
-      %img{alt: "駅からの道順9", height: "300", src: "images/map09_P5093686.jpg", width: "400"}/
+      %img.map-direction-image{alt: "駅からの道順9", src: "images/map09_P5093686.jpg"}
     %li
       到着しました。左手の入り口からお入り下さい。
-      %img{alt: "駅からの道順10", height: "300", src: "images/map10_P5093684.jpg", width: "400"}/
+      %img.map-direction-image{alt: "駅からの道順10", src: "images/map10_P5093684.jpg"}
