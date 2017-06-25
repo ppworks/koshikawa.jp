@@ -1,4 +1,3 @@
-- map_url = "https://www.google.co.jp/maps/place/%E8%B6%8A%E5%B7%9D%E6%B2%BB%E7%99%82%E9%99%A2/@35.5536502,139.7364615,17z/data=!3m1!4b1!4m2!3m1!1s0x6018611b0c303d33:0xd683b5aec86e424d"
 #contents
   %h2 行き方
   %p
@@ -7,15 +6,16 @@
     %dt 住所
     %dd
       %address
-        %a{href: map_url, target: "_blank"} 東京都大田区西糀谷3-34-7
+        %a{href: data.info.maps.url, target: "_blank"} 東京都大田区西糀谷3-34-7
     %dt 電話番号
     %dd
-      %address 03-5705-1224
+      %address
+        %a{href: 'tel:0357051224'} 03-5705-1224
   %p
     %img.map-image{src: "./images/map.png"}
   %p
     %iframe.map-iframe{height: "400", src: "./googleMap.html", width: "600"}
-    = link_to map_url, class: "map-link", target: "_blank" do
+    = link_to data.info.maps.url, class: "map-link", target: "_blank" do
       GoogleMapで見る
 
   %h2 最寄り駅から越川治療院への道順
