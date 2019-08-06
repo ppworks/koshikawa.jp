@@ -14,8 +14,7 @@
   %p
     %img.map-image{src: "./images/map.png"}
   %p
-    %iframe.map-iframe{height: "400", src: "./googleMap.html", width: "600"}
-    = link_to data.info.maps.url, class: "map-link", target: "_blank" do
+    = link_to data.info.maps.url, target: "_blank" do
       GoogleMapで見る
 
   %h2 最寄り駅から越川治療院への道順
